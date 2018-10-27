@@ -1,0 +1,19 @@
+{
+  "name": "testof",
+  "version": "0.1.0",
+  "author": "Levi Perelman",
+  "license": "ISC",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "node ./tests/test.js"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1"
+  },
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/node": "^10.12.0",
+    "typescript": "^3.1.3"
+  }
+}
