@@ -1,3 +1,5 @@
+'use strict';
+
 console.log('**********************************');
 console.log('**    OH GOD TESTING A TESTER   **');
 console.log('**          GOOD LUCK           **');
