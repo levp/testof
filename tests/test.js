@@ -1,33 +1,48 @@
+console.log('**********************************');
+console.log('**    OH GOD TESTING A TESTER   **');
+console.log('**          GOOD LUCK           **');
+console.log('**********************************');
+
+const assert = require('assert');
 const {TestRunner} = require('../dist/TestRunner');
 
 const runner = new TestRunner();
 
+let count = 0;
+
 runner.suite('MyTest', () => {
+	assert.strictEqual(++count, 1);
+
 	runner.suite('First', () => {
+		assert.strictEqual(++count, 2);
+
 		runner.test('one', async () => {
-			// console.log('1 START');
+			assert.strictEqual(++count, 3);
 			await delay(1000);
-			// console.log('1 END');
 		});
+
 		runner.test('two', (cb) => {
-			// console.log('2 START');
-			// await delay(1000);
+			assert.strictEqual(++count, 4);
 			setTimeout(() => {
 				cb('oh teh noes!');
-				// // console.log('2 END');
 			}, 2000);
 		});
 	});
+
 	runner.suite('Second', () => {
+		assert.strictEqual(++count, 5);
+
 		runner.test('three', () => {
-			// console.log('3 START');
-			// console.log('3 END');
+			assert.strictEqual(++count, 6);
 		});
 
 		runner.test('four', async () => {
-			// console.log('4 START');
+			assert.strictEqual(++count, 7);
 			await delay(1000);
-			// console.log('4 END');
+		});
+
+		runner.test('four', () => {
+			assert.strictEqual(++count, 8);
 		});
 	});
 });
